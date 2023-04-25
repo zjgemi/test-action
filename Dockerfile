@@ -1,3 +1,5 @@
-FROM python:3.8
+FROM dptechnology/dflow:latest
+
+WORKDIR /data/dpgen2
 COPY ./ ./
 RUN pip install .
