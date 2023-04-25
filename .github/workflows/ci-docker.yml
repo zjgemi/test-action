@@ -23,5 +23,5 @@ jobs:
 
     - name: Build and push
       run: |
-        docker build zjgemi/test-action:latest
+        docker build -t zjgemi/test-action:latest .
         docker push zjgemi/test-action:latest
