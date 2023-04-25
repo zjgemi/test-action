@@ -3,7 +3,7 @@ requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "testaction"
+name = "dpgen2"
 dynamic = ["version"]
 description = "DPGEN2: concurrent learning workflow generating the machine learning potential energy models."
 authors = [
@@ -28,12 +28,12 @@ readme = "README.md"
 keywords = ["deep potential", "concurrent learning", "work flow"]
 
 [project.urls]
-Homepage = "https://github.com/deepmodeling/testaction"
-documentation = "https://docs.deepmodeling.com/projects/testaction"
-repository = "https://github.com/deepmodeling/testaction"
+Homepage = "https://github.com/deepmodeling/dpgen2"
+documentation = "https://docs.deepmodeling.com/projects/dpgen2"
+repository = "https://github.com/deepmodeling/dpgen2"
 
 [project.entry-points.console_scripts]
-testaction = "testaction.entrypoint.main:main"
+dpgen2 = "dpgen2.entrypoint.main:main"
 
 [project.optional-dependencies]
 docs = [
@@ -51,17 +51,17 @@ test = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["testaction*"]
+include = ["dpgen2*"]
 
 [tool.setuptools.package-data]
-testaction = ['*.json']
+dpgen2 = ['*.json']
 
 [tool.setuptools_scm]
-write_to = "testaction/_version.py"
+write_to = "dpgen2/_version.py"
 
 [tool.pyright]
 include = [
-     "testaction",
+     "dpgen2",
 ]
 
 [tool.isort]
