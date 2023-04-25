@@ -1,7 +1,69 @@
+[build-system]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "test-action"
-version = "1.0.0"
-requires-python = ">=3.8"
+name = "testaction"
+dynamic = ["version"]
+description = "DPGEN2: concurrent learning workflow generating the machine learning potential energy models."
+authors = [
+  {name = "DeepModeling"},
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3.7",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+]
+dependencies = [
+	     'numpy',
+	     'dpdata',
+	     'pydflow>=1.6.39',
+	     'dargs>=0.3.1',
+	     'scipy',
+	     'lbg',
+          'packaging',
+]
+requires-python = ">=3.7"
+readme = "README.md"
+keywords = ["deep potential", "concurrent learning", "work flow"]
+
+[project.urls]
+Homepage = "https://github.com/deepmodeling/testaction"
+documentation = "https://docs.deepmodeling.com/projects/testaction"
+repository = "https://github.com/deepmodeling/testaction"
+
+[project.entry-points.console_scripts]
+testaction = "testaction.entrypoint.main:main"
+
+[project.optional-dependencies]
+docs = [
+     'sphinx',
+     'recommonmark',
+     'sphinx_rtd_theme>=1.0.0rc1',
+     'numpydoc',
+     'myst_parser',
+     'deepmodeling_sphinx',
+     'sphinx-argparse',
+     "dargs>=0.3.1",
+]
+test = [
+     'fakegaussian>=0.0.3',
+]
+
+[tool.setuptools.packages.find]
+include = ["testaction*"]
 
 [tool.setuptools.package-data]
-test_action = ['*.json']
+testaction = ['*.json']
+
+[tool.setuptools_scm]
+write_to = "testaction/_version.py"
+
+[tool.pyright]
+include = [
+     "testaction",
+]
+
+[tool.isort]
+profile = "black"
+force_grid_wrap = 1
